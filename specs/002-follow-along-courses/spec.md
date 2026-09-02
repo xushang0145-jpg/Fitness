@@ -4,7 +4,7 @@
 
 **Created**: 2026-09-02
 
-**Status**: Draft
+**Status**: Implemented
 
 **Input**: 用户描述："健身 App 下一阶段核心特性：跟练课程，让用户在不依赖 GPS 的场景下按结构化课程完成训练。"
 

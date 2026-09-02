@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Alert } from 'rea
 import { useRouter } from 'expo-router';
 import { startTracking } from '@/services/trackingEngine';
 import { getWorkoutList, type Workout } from '@/services/workoutRepo';
+import { listRecords } from '@/services/courseRepo';
 import { getSettings } from '@/services/settingsRepo';
 import { getWeekStart, calculateWeeklyStats, estimateSteps } from '@/domain/stats';
 import { formatDistance } from '@/domain/format';
@@ -38,7 +39,14 @@ export default function HomeScreen() {
     const todayWorkouts = workouts.filter((w) => w.start_time >= today.getTime());
     const todayDistance = todayWorkouts.reduce((sum, w) => sum + w.distance_m, 0);
     setTodaySteps(estimateSteps(todayDistance));
-    setTodayCalories(todayWorkouts.reduce((sum, w) => sum + w.calories, 0));
+
+    const courseRecords = await listRecords(1000);
+    const todayCourseCalories = courseRecords
+      .filter((c) => c.start_time >= today.getTime())
+      .reduce((sum, c) => sum + c.calories, 0);
+    setTodayCalories(
+      todayWorkouts.reduce((sum, w) => sum + w.calories, 0) + todayCourseCalories
+    );
   }
 
   const handleStart = async (type: SportType) => {

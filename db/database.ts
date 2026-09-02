@@ -1,7 +1,7 @@
 import * as SQLite from 'expo-sqlite';
 
 const DB_NAME = 'fitapp.db';
-const DB_VERSION = 1;
+const DB_VERSION = 2;
 
 let db: SQLite.SQLiteDatabase | null = null;
 
@@ -73,6 +73,45 @@ async function migrate(
       INSERT OR IGNORE INTO settings (id) VALUES (1);
 
       PRAGMA user_version = 1;
+    `);
+  }
+
+  if (fromVersion < 2) {
+    await database.execAsync(`
+      CREATE TABLE IF NOT EXISTS course_record (
+        id TEXT PRIMARY KEY,
+        course_id TEXT NOT NULL,
+        status TEXT NOT NULL CHECK(status IN ('active', 'done')),
+        start_time INTEGER NOT NULL,
+        end_time INTEGER,
+        duration_s INTEGER DEFAULT 0,
+        completed_count INTEGER DEFAULT 0,
+        total_count INTEGER NOT NULL,
+        calories INTEGER DEFAULT 0,
+        created_at INTEGER NOT NULL
+      );
+
+      CREATE INDEX IF NOT EXISTS idx_course_record_status ON course_record(status);
+      CREATE INDEX IF NOT EXISTS idx_course_record_start_time ON course_record(start_time DESC);
+      CREATE INDEX IF NOT EXISTS idx_course_record_course_id ON course_record(course_id);
+
+      CREATE TABLE IF NOT EXISTS course_record_step (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        record_id TEXT NOT NULL,
+        action_id TEXT NOT NULL,
+        order_index INTEGER NOT NULL,
+        target_duration_s INTEGER,
+        target_reps INTEGER,
+        actual_duration_s INTEGER DEFAULT 0,
+        actual_reps INTEGER DEFAULT 0,
+        status TEXT NOT NULL CHECK(status IN ('pending', 'done', 'skipped')),
+        finished_at INTEGER,
+        FOREIGN KEY (record_id) REFERENCES course_record(id) ON DELETE CASCADE
+      );
+
+      CREATE INDEX IF NOT EXISTS idx_course_record_step_record ON course_record_step(record_id, order_index);
+
+      PRAGMA user_version = 2;
     `);
   }
 }

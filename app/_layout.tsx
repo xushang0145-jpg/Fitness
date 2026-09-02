@@ -6,6 +6,7 @@ import Constants from 'expo-constants';
 import { AMapSdk } from 'react-native-amap3d';
 import { colors } from '@/theme';
 import { recoverActiveWorkout } from '@/services/trackingEngine';
+import { closeOrphanedActiveRecords } from '@/services/courseRepo';
 
 const amapKey = Platform.select({
   ios: Constants.expoConfig?.extra?.amapIosKey ?? '',
@@ -24,6 +25,10 @@ export default function RootLayout() {
         router.push('/workout/live');
       }
     });
+    // 跟练不恢复进行中的课程：把异常退出残留的 active 记录结算为 done
+    closeOrphanedActiveRecords().catch((error) =>
+      console.error('清理残留跟练记录失败', error)
+    );
   }, []);
 
   return (
@@ -42,6 +47,18 @@ export default function RootLayout() {
           options={{
             headerShown: false,
             presentation: 'fullScreenModal',
+          }}
+        />
+        <Stack.Screen
+          name="course"
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="exercise/[id]"
+          options={{
+            title: '动作详情',
           }}
         />
         <Stack.Screen
