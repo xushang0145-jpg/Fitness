@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FitApp · 高保真原型总览</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  body{align-items:stretch;padding:48px 40px 80px;max-width:1560px;margin:0 auto}
+  .board-header{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px}
+  .board-title{font-size:34px;font-weight:800;letter-spacing:-.02em}
+  .board-sub{color:var(--txt-2);font-size:14px;margin-top:8px;line-height:1.7}
+  .legend{display:flex;gap:10px;flex-wrap:wrap}
+  .legend .chip{cursor:default}
+  .group{margin-top:44px}
+  .group-title{display:flex;align-items:center;gap:12px;font-size:19px;font-weight:700}
+  .group-title .bar{width:4px;height:20px;border-radius:2px;background:var(--acc)}
+  .group-desc{color:var(--txt-3);font-size:13px;margin-top:6px}
+  .frames{display:grid;grid-template-columns:repeat(auto-fit,minmax(375px,1fr));gap:36px;margin-top:24px;justify-items:center}
+  .frame-item{display:flex;flex-direction:column;align-items:center;gap:14px}
+  .frame-item iframe{width:375px;height:812px;border:none;border-radius:48px;pointer-events:none;
+    box-shadow:0 40px 80px rgba(0,0,0,.6),0 0 0 10px #1a1d21,0 0 0 12px #2a2e34;background:var(--bg)}
+  .frame-name{font-size:14px;font-weight:700}
+  .frame-flow{color:var(--txt-3);font-size:12px}
+  .specs{margin-top:56px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+  .spec-card h4{font-size:14px;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .swatch{display:flex;align-items:center;gap:10px;padding:7px 0;font-size:12px;color:var(--txt-2)}
+  .swatch .dot{width:26px;height:26px;border-radius:8px;flex-shrink:0;border:1px solid var(--border)}
+  .spec-line{padding:7px 0;font-size:12px;color:var(--txt-2);display:flex;justify-content:space-between}
+  .spec-line b{color:var(--txt);font-weight:600}
+  .flow-arrow{color:var(--acc);font-weight:700;margin:0 4px}
+</style>
+</head>
+<body>
+  <div class="board-header">
+    <div>
+      <div class="board-title">FitApp · 高保真原型 v0.1</div>
+      <div class="board-sub">
+        双端 MVP（iOS / Android）· 深色运动风 · 写实人物示意图<br>
+        用户流程：运动记录 <span class="flow-arrow">01 → 02 → 03 → 04</span> ｜ 跟练课程 <span class="flow-arrow">05 → 09 → 10 → 11</span>
+      </div>
+    </div>
+    <div class="legend">
+      <div class="chip"><span style="width:8px;height:8px;border-radius:50%;background:var(--acc)"></span>品牌荧光绿 #C8F31D</div>
+      <div class="chip"><span style="width:8px;height:8px;border-radius:50%;background:var(--blue)"></span>骑行蓝 #5BC8F5</div>
+      <div class="chip"><span style="width:8px;height:8px;border-radius:50%;background:var(--orange)"></span>能量橙 #FF8A5B</div>
+    </div>
+  </div>
+
+  <div class="group">
+    <div class="group-title"><span class="bar"></span>功能一 · 运动记录（跑步 / 骑行 / 步行）</div>
+    <div class="group-desc">GPS 轨迹 + 实时数据 + 完成总结 + 历史列表</div>
+    <div class="frames">
+      <div class="frame-item">
+        <iframe src="01-home.html" scrolling="no"></iframe>
+        <div class="frame-name">01 · 运动首页</div>
+        <div class="frame-flow">周目标进度 → 选择运动类型</div>
+      </div>
+      <div class="frame-item">
+        <iframe src="02-running.html" scrolling="no"></iframe>
+        <div class="frame-name">02 · 跑步进行中</div>
+        <div class="frame-flow">实时轨迹 → 暂停 / 结束 / 锁屏</div>
+      </div>
+      <div class="frame-item">
+        <iframe src="03-finish.html" scrolling="no"></iframe>
+        <div class="frame-name">03 · 运动完成</div>
+        <div class="frame-flow">数据总结 + 配速曲线 → 保存</div>
+      </div>
+      <div class="frame-item">
+        <iframe src="04-history.html" scrolling="no"></iframe>
+        <div class="frame-name">04 · 历史记录</div>
+        <div class="frame-flow">类型筛选 + 月度总览 + 记录列表</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="group">
+    <div class="group-title"><span class="bar" style="background:var(--blue)"></span>功能二 · 跟练课程</div>
+    <div class="group-desc">课程列表 → 课程详情 → 课程执行 → 完成总结</div>
+    <div class="frames">
+      <div class="frame-item">
+        <iframe src="05-training.html" scrolling="no"></iframe>
+        <div class="frame-name">05 · 跟练首页</div>
+        <div class="frame-flow">分类筛选 → 今日推荐 → 课程卡片</div>
+      </div>
+      <div class="frame-item">
+        <iframe src="09-course-detail.html" scrolling="no"></iframe>
+        <div class="frame-name">09 · 课程详情</div>
+        <div class="frame-flow">课程简介 + 动作列表 → 开始跟练</div>
+      </div>
+      <div class="frame-item">
+        <iframe src="10-course-active.html" scrolling="no"></iframe>
+        <div class="frame-name">10 · 课程进行中</div>
+        <div class="frame-flow">计时 / 计数 → 暂停 / 跳过 / 结束</div>
+      </div>
+      <div class="frame-item">
+        <iframe src="11-course-finish.html" scrolling="no"></iframe>
+        <div class="frame-name">11 · 课程完成</div>
+        <div class="frame-flow">完成度圆环 + 动作明细 + 返回</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="group">
+    <div class="group-title"><span class="bar" style="background:var(--orange)"></span>全局 · 我的</div>
+    <div class="group-desc">累计统计 + 周活跃 + 设置（与运动记录共用）</div>
+    <div class="frames">
+      <div class="frame-item">
+        <iframe src="08-profile.html" scrolling="no"></iframe>
+        <div class="frame-name">08 · 我的</div>
+        <div class="frame-flow">累计统计 + 周活跃 + 设置</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="group">
+    <div class="group-title"><span class="bar" style="background:var(--orange)"></span>设计规范速查</div>
+    <div class="specs">
+      <div class="card spec-card">
+        <h4>🎨 配色</h4>
+        <div class="swatch"><span class="dot" style="background:#0D0F12"></span>页面底色 #0D0F12</div>
+        <div class="swatch"><span class="dot" style="background:#181C22"></span>卡片 #181C22</div>
+        <div class="swatch"><span class="dot" style="background:#C8F31D"></span>主品牌色 #C8F31D</div>
+        <div class="swatch"><span class="dot" style="background:#5BC8F5"></span>辅助蓝 #5BC8F5</div>
+        <div class="swatch"><span class="dot" style="background:#FF8A5B"></span>能量橙 #FF8A5B</div>
+      </div>
+      <div class="card spec-card">
+        <h4>🔤 字阶与圆角</h4>
+        <div class="spec-line"><span>页面大标题</span><b>24–28 / 800</b></div>
+        <div class="spec-line"><span>大数字（时长/里程）</span><b>46–54 / 700 等宽数字</b></div>
+        <div class="spec-line"><span>卡片标题</span><b>17 / 700</b></div>
+        <div class="spec-line"><span>正文辅助</span><b>13 / Regular · #A6AEB8</b></div>
+        <div class="spec-line"><span>圆角</span><b>卡片 24 · 按钮全圆</b></div>
+      </div>
+      <div class="card spec-card">
+        <h4>🧭 技术映射（RN 落地提示）</h4>
+        <div class="spec-line"><span>Tab 导航</span><b>expo-router Tabs</b></div>
+        <div class="spec-line"><span>轨迹地图</span><b>高德 SDK + Polyline</b></div>
+        <div class="spec-line"><span>进度环</span><b>react-native-svg</b></div>
+        <div class="spec-line"><span>数据存储</span><b>expo-sqlite</b></div>
+        <div class="spec-line"><span>动作图片</span><b>AI 生成写实风格占位</b></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

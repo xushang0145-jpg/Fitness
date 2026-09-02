@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>03 · 运动完成</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="screen">
+  <div class="notch"></div>
+  <div class="scroll">
+    <div class="statusbar"><span>9:41</span>
+      <span style="display:flex;gap:6px;align-items:center">
+        <svg width="17" height="11" viewBox="0 0 17 11" fill="white"><rect x="0" y="7" width="3" height="4" rx="1"/><rect x="4.5" y="5" width="3" height="6" rx="1"/><rect x="9" y="2.5" width="3" height="8.5" rx="1"/><rect x="13.5" y="0" width="3" height="11" rx="1"/></svg>
+        <svg width="25" height="12" viewBox="0 0 25 12"><rect x="0.5" y="0.5" width="20" height="11" rx="3" fill="none" stroke="white" opacity=".4"/><rect x="2" y="2" width="15" height="8" rx="1.5" fill="white"/><path d="M23 4v4a2.2 2.2 0 0 0 0-4z" fill="white" opacity=".4"/></svg>
+      </span>
+    </div>
+
+    <div style="padding:4px 20px 0;overflow:hidden">
+      <div class="row" style="justify-content:space-between">
+        <div style="width:36px;height:36px;border-radius:12px;background:var(--card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F2F4F6" stroke-width="2" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </div>
+        <div style="font-size:15px;font-weight:700">运动详情</div>
+        <div style="width:36px;height:36px;border-radius:12px;background:var(--card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F2F4F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:16px;padding:18px;background:linear-gradient(135deg,rgba(200,243,29,.10),rgba(24,28,34,1) 55%);border-color:rgba(200,243,29,.25)">
+        <div class="row" style="gap:8px">
+          <div class="pill-tag" style="background:var(--acc-soft);color:var(--acc)">户外跑步</div>
+          <div class="caption" style="font-size:12px;color:var(--txt-3)">今天 07:12 · 滨江公园</div>
+        </div>
+        <div class="num" style="font-size:46px;margin-top:12px;letter-spacing:-.03em">5.23 <span style="font-size:16px;color:var(--txt-3);font-weight:600">公里</span></div>
+        <div class="row" style="margin-top:14px;gap:0">
+          <div style="flex:1">
+            <div class="num" style="font-size:17px">32:41</div>
+            <div class="label" style="margin-top:2px">时长</div>
+          </div>
+          <div style="flex:1">
+            <div class="num" style="font-size:17px">6'15"</div>
+            <div class="label" style="margin-top:2px">平均配速</div>
+          </div>
+          <div style="flex:1">
+            <div class="num" style="font-size:17px;color:var(--orange)">312</div>
+            <div class="label" style="margin-top:2px">千卡</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:14px;padding:0;overflow:hidden;height:180px;position:relative">
+        <div class="map-sim" style="position:absolute;inset:0">
+          <div class="map-park" style="left:-30px;top:20px;width:150px;height:120px"></div>
+          <div class="map-road" style="left:0;top:80px;width:375px;height:10px;transform:rotate(-3deg)"></div>
+          <div class="map-road" style="left:140px;top:-40px;width:10px;height:300px;transform:rotate(6deg)"></div>
+          <svg style="position:absolute;inset:0;width:100%;height:100%" viewBox="0 0 335 180" preserveAspectRatio="none">
+            <path class="track-line" style="stroke-width:3.5" d="M40 150 Q 90 130 110 100 T 150 60 Q 160 40 130 35 T 90 20"/>
+          </svg>
+        </div>
+        <div class="chip" style="position:absolute;left:12px;bottom:12px;background:rgba(24,28,34,.85);font-size:11px;padding:6px 10px">路线回放</div>
+      </div>
+
+      <div class="card" style="margin-top:14px;padding:16px 18px">
+        <div class="row" style="justify-content:space-between">
+          <div class="label">配速变化</div>
+          <div class="label">最快 5'48" · 最慢 6'52"</div>
+        </div>
+        <svg viewBox="0 0 300 84" style="width:100%;height:84px;margin-top:10px">
+          <defs>
+            <linearGradient id="pg" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#C8F31D" stop-opacity=".28"/>
+              <stop offset="1" stop-color="#C8F31D" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <path d="M0 34 Q 25 28 50 38 T 100 44 T 150 30 T 200 40 T 250 26 T 300 34 L 300 84 L 0 84 Z" fill="url(#pg)"/>
+          <path d="M0 34 Q 25 28 50 38 T 100 44 T 150 30 T 200 40 T 250 26 T 300 34" fill="none" stroke="#C8F31D" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="250" cy="26" r="3.5" fill="#C8F31D"/>
+        </svg>
+      </div>
+
+      <div class="btn-acc" style="height:54px;margin-top:18px;font-size:16px">完成，保存记录</div>
+    </div>
+    <div class="homebar"></div>
+  </div>
+</div>
+</body>
+</html>

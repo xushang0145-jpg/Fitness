@@ -1,0 +1,72 @@
+diff --git a/node_modules/react-native-amap3d/lib/ios/MapView/MapViewManager.swift b/node_modules/react-native-amap3d/lib/ios/MapView/MapViewManager.swift
+index c79d9d2..e2f551e 100644
+--- a/node_modules/react-native-amap3d/lib/ios/MapView/MapViewManager.swift
++++ b/node_modules/react-native-amap3d/lib/ios/MapView/MapViewManager.swift
+@@ -21,8 +21,10 @@ class AMapViewManager: RCTViewManager {
+   }
+ 
+   func getView(reactTag: NSNumber, callback: @escaping (MapView) -> Void) {
++    guard let bridge else { return }
+     bridge.uiManager.addUIBlock { _, viewRegistry in
+-      callback(viewRegistry![reactTag] as! MapView)
++      guard let view = viewRegistry?[reactTag] as? MapView else { return }
++      callback(view)
+     }
+   }
+ }
+diff --git a/node_modules/react-native-amap3d/lib/ios/MapView/MarkerManager.swift b/node_modules/react-native-amap3d/lib/ios/MapView/MarkerManager.swift
+index fd2a303..a906cb5 100644
+--- a/node_modules/react-native-amap3d/lib/ios/MapView/MarkerManager.swift
++++ b/node_modules/react-native-amap3d/lib/ios/MapView/MarkerManager.swift
+@@ -4,7 +4,7 @@ class AMapMarkerManager: RCTViewManager {
+ 
+   override func view() -> UIView {
+     let view = Marker()
+-    view.imageLoader = bridge.module(forName: "ImageLoader") as? RCTImageLoader
++    view.imageLoader = bridge?.module(forName: "ImageLoader") as? RCTImageLoader
+     return view
+   }
+ 
+@@ -13,8 +13,10 @@ class AMapMarkerManager: RCTViewManager {
+   }
+ 
+   func getView(reactTag: NSNumber, callback: @escaping (Marker) -> Void) {
++    guard let bridge else { return }
+     bridge.uiManager.addUIBlock { _, viewRegistry in
+-      callback(viewRegistry![reactTag] as! Marker)
++      guard let view = viewRegistry?[reactTag] as? Marker else { return }
++      callback(view)
+     }
+   }
+ }
+diff --git a/node_modules/react-native-amap3d/lib/ios/MapView/MultiPointManager.swift b/node_modules/react-native-amap3d/lib/ios/MapView/MultiPointManager.swift
+index 196cc35..b62deaa 100644
+--- a/node_modules/react-native-amap3d/lib/ios/MapView/MultiPointManager.swift
++++ b/node_modules/react-native-amap3d/lib/ios/MapView/MultiPointManager.swift
+@@ -4,7 +4,7 @@ class AMapMultiPointManager: RCTViewManager {
+ 
+   override func view() -> UIView {
+     let view = MultiPoint()
+-    view.imageLoader = bridge.module(forName: "ImageLoader") as? RCTImageLoader
++    view.imageLoader = bridge?.module(forName: "ImageLoader") as? RCTImageLoader
+     return view
+   }
+ }
+diff --git a/node_modules/react-native-amap3d/lib/src/cluster/index.tsx b/node_modules/react-native-amap3d/lib/src/cluster/index.tsx
+index efe1b5b..eac7eab 100644
+--- a/node_modules/react-native-amap3d/lib/src/cluster/index.tsx
++++ b/node_modules/react-native-amap3d/lib/src/cluster/index.tsx
+@@ -1,3 +1,4 @@
++// @ts-nocheck
+ import * as React from "react";
+ import { ViewStyle } from "react-native";
+ import Supercluster, { ClusterFeature, ClusterProperties } from "supercluster";
+diff --git a/node_modules/react-native-amap3d/lib/src/map-view.tsx b/node_modules/react-native-amap3d/lib/src/map-view.tsx
+index e97cee5..4fb9ff0 100644
+--- a/node_modules/react-native-amap3d/lib/src/map-view.tsx
++++ b/node_modules/react-native-amap3d/lib/src/map-view.tsx
+@@ -1,3 +1,4 @@
++// @ts-nocheck
+ import * as React from "react";
+ import {
+   NativeMethods,

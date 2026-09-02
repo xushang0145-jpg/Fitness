@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>08 · 我的</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="screen">
+  <div class="notch"></div>
+  <div class="scroll">
+    <div class="statusbar"><span>9:41</span>
+      <span style="display:flex;gap:6px;align-items:center">
+        <svg width="17" height="11" viewBox="0 0 17 11" fill="white"><rect x="0" y="7" width="3" height="4" rx="1"/><rect x="4.5" y="5" width="3" height="6" rx="1"/><rect x="9" y="2.5" width="3" height="8.5" rx="1"/><rect x="13.5" y="0" width="3" height="11" rx="1"/></svg>
+        <svg width="25" height="12" viewBox="0 0 25 12"><rect x="0.5" y="0.5" width="20" height="11" rx="3" fill="none" stroke="white" opacity=".4"/><rect x="2" y="2" width="15" height="8" rx="1.5" fill="white"/><path d="M23 4v4a2.2 2.2 0 0 0 0-4z" fill="white" opacity=".4"/></svg>
+      </span>
+    </div>
+
+    <div style="padding:8px 20px 0;overflow:hidden">
+      <div class="row" style="gap:14px;align-items:center">
+        <div class="avatar" style="width:62px;height:62px">
+          <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=portrait%20photo%20of%20a%20young%20asian%20man%20athlete%2C%20short%20black%20hair%2C%20wearing%20black%20sportswear%2C%20confident%20smile%2C%20studio%20lighting%2C%20dark%20background%2C%20headshot&image_size=square" alt="">
+        </div>
+        <div>
+          <div style="font-size:20px;font-weight:800">Alex</div>
+          <div class="caption" style="font-size:12px;margin-top:3px">坚持运动 42 天 · 本地模式</div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:18px;padding:16px 18px;display:flex">
+        <div style="flex:1;text-align:center">
+          <div class="num" style="font-size:21px">126.8</div>
+          <div class="label" style="margin-top:3px">总里程 km</div>
+        </div>
+        <div style="width:1px;background:var(--border)"></div>
+        <div style="flex:1;text-align:center">
+          <div class="num" style="font-size:21px">36</div>
+          <div class="label" style="margin-top:3px">训练次数</div>
+        </div>
+        <div style="width:1px;background:var(--border)"></div>
+        <div style="flex:1;text-align:center">
+          <div class="num" style="font-size:21px;color:var(--orange)">8.4k</div>
+          <div class="label" style="margin-top:3px">总千卡</div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:14px;padding:16px 18px">
+        <div class="row" style="justify-content:space-between">
+          <div class="label">近 7 天活跃度</div>
+          <div class="caption" style="font-size:11px;color:var(--acc)">连续 5 天</div>
+        </div>
+        <div class="row" style="justify-content:space-between;align-items:flex-end;height:74px;margin-top:12px;padding:0 4px">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px"><div style="width:16px;height:26px;border-radius:5px;background:var(--card-2)"></div><span class="label" style="font-size:10px">一</span></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px"><div style="width:16px;height:40px;border-radius:5px;background:var(--acc);opacity:.55"></div><span class="label" style="font-size:10px">二</span></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px"><div style="width:16px;height:30px;border-radius:5px;background:var(--acc);opacity:.55"></div><span class="label" style="font-size:10px">三</span></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px"><div style="width:16px;height:48px;border-radius:5px;background:var(--acc)"></div><span class="label" style="font-size:10px">四</span></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px"><div style="width:16px;height:36px;border-radius:5px;background:var(--acc);opacity:.75"></div><span class="label" style="font-size:10px">五</span></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px"><div style="width:16px;height:52px;border-radius:5px;background:var(--acc);box-shadow:0 0 10px rgba(200,243,29,.4)"></div><span class="label" style="font-size:10px;color:var(--acc)">六</span></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px"><div style="width:16px;height:12px;border-radius:5px;background:var(--card-2)"></div><span class="label" style="font-size:10px">日</span></div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:14px;padding:6px 18px">
+        <div class="row" style="justify-content:space-between;padding:14px 0">
+          <div class="row" style="gap:12px">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A6AEB8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            <span style="font-size:14px">设置与目标</span>
+          </div>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6B7480" stroke-width="2" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg>
+        </div>
+        <div class="divider"></div>
+        <div class="row" style="justify-content:space-between;padding:14px 0">
+          <div class="row" style="gap:12px">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A6AEB8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18"/></svg>
+            <span style="font-size:14px">我的训练计划</span>
+          </div>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6B7480" stroke-width="2" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg>
+        </div>
+        <div class="divider"></div>
+        <div class="row" style="justify-content:space-between;padding:14px 0">
+          <div class="row" style="gap:12px">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A6AEB8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+            <span style="font-size:14px">深色模式</span>
+          </div>
+          <div style="width:44px;height:26px;border-radius:13px;background:var(--acc);position:relative">
+            <div style="position:absolute;right:3px;top:3px;width:20px;height:20px;border-radius:50%;background:#0B0D0E"></div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="row" style="justify-content:space-between;padding:14px 0">
+          <div class="row" style="gap:12px">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A6AEB8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3m.1 4h.01"/></svg>
+            <span style="font-size:14px">帮助与反馈</span>
+          </div>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6B7480" stroke-width="2" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg>
+        </div>
+      </div>
+
+      <div class="caption" style="text-align:center;font-size:11px;color:var(--txt-3);margin-top:16px">数据仅存储在本机 · v0.1.0 MVP</div>
+    </div>
+
+    <div style="flex:1"></div>
+    <div class="tabbar">
+      <div class="tab">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 12 3l9 6.5V21a1 1 0 0 1-1 1h-5v-7h-6v7H4a1 1 0 0 1-1-1z"/></svg>
+        运动
+      </div>
+      <div class="tab">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5v11m11-11v11M3 9v6m18-6v6M6.5 12h11"/></svg>
+        跟练
+      </div>
+      <div class="tab on">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg>
+        我的
+      </div>
+    </div>
+    <div class="homebar"></div>
+  </div>
+</div>
+</body>
+</html>

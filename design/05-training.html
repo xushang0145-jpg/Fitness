@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>05 · 跟练首页</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="screen">
+  <div class="notch"></div>
+  <div class="scroll">
+    <div class="statusbar"><span>9:41</span>
+      <span style="display:flex;gap:6px;align-items:center">
+        <svg width="17" height="11" viewBox="0 0 17 11" fill="white"><rect x="0" y="7" width="3" height="4" rx="1"/><rect x="4.5" y="5" width="3" height="6" rx="1"/><rect x="9" y="2.5" width="3" height="8.5" rx="1"/><rect x="13.5" y="0" width="3" height="11" rx="1"/></svg>
+        <svg width="25" height="12" viewBox="0 0 25 12"><rect x="0.5" y="0.5" width="20" height="11" rx="3" fill="none" stroke="white" opacity=".4"/><rect x="2" y="2" width="15" height="8" rx="1.5" fill="white"/><path d="M23 4v4a2.2 2.2 0 0 0 0-4z" fill="white" opacity=".4"/></svg>
+      </span>
+    </div>
+
+    <div style="padding:8px 20px 0;overflow:hidden">
+      <div class="row" style="justify-content:space-between">
+        <div class="page-title" style="font-size:24px">跟练课程</div>
+        <div style="width:36px;height:36px;border-radius:12px;background:var(--card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F2F4F6" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        </div>
+      </div>
+
+      <div class="row" style="gap:8px;margin-top:16px">
+        <div class="chip on">全部</div>
+        <div class="chip">燃脂</div>
+        <div class="chip">塑形</div>
+        <div class="chip">拉伸</div>
+        <div class="chip">全身</div>
+      </div>
+
+      <div class="card" style="margin-top:16px;padding:0;overflow:hidden;position:relative;height:150px">
+        <img class="demo-img" style="position:absolute;inset:0;opacity:.9" src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=fit%20athletic%20asian%20woman%20doing%20full%20body%20HIIT%20workout%2C%20high%20knees%20movement%2C%20dark%20modern%20gym%2C%20dramatic%20rim%20lighting%2C%20realistic%20fitness%20photography%2C%20moody%20dark%20tones&image_size=landscape_16_9" alt="">
+        <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,15,18,.94) 30%,rgba(13,15,18,.1) 80%)"></div>
+        <div style="position:relative;padding:18px;display:flex;flex-direction:column;justify-content:center;height:100%">
+          <div class="pill-tag" style="background:var(--acc);color:#0B0D0E;width:fit-content">今日推荐</div>
+          <div style="font-size:19px;font-weight:800;margin-top:8px">燃脂全身 · 20 分钟</div>
+          <div class="caption" style="font-size:12px;margin-top:3px">8 个动作 · 初级 · 无器械 · 约 180 千卡</div>
+        </div>
+      </div>
+
+      <div class="row" style="justify-content:space-between;margin-top:22px">
+        <div class="section-title">全部课程</div>
+        <div class="caption" style="font-size:12px;color:var(--txt-3)">4 门课程</div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px">
+        <div class="card" style="padding:0;overflow:hidden">
+          <div style="height:104px;overflow:hidden">
+            <img class="demo-img" src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=athletic%20asian%20woman%20doing%20jumping%20jacks%20exercise%2C%20dark%20gym%20background%2C%20realistic%20fitness%20photography%2C%20dramatic%20rim%20light%2C%20full%20body%20cardio&image_size=square" alt="">
+          </div>
+          <div style="padding:12px">
+            <div style="font-size:14px;font-weight:700">燃脂全身</div>
+            <div class="row" style="gap:6px;margin-top:6px">
+              <span class="pill-tag" style="background:rgba(255,91,106,.12);color:var(--red);font-size:10px">燃脂</span>
+              <span class="caption" style="font-size:10px;color:var(--txt-3)">20 分钟</span>
+            </div>
+          </div>
+        </div>
+        <div class="card" style="padding:0;overflow:hidden">
+          <div style="height:104px;overflow:hidden">
+            <img class="demo-img" src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=muscular%20asian%20man%20doing%20dumbbell%20shoulder%20press%2C%20upper%20body%20strength%2C%20dark%20modern%20gym%2C%20realistic%20fitness%20photography%2C%20dramatic%20lighting&image_size=square" alt="">
+          </div>
+          <div style="padding:12px">
+            <div style="font-size:14px;font-weight:700">上肢力量</div>
+            <div class="row" style="gap:6px;margin-top:6px">
+              <span class="pill-tag" style="background:rgba(91,200,245,.14);color:var(--blue);font-size:10px">塑形</span>
+              <span class="caption" style="font-size:10px;color:var(--txt-3)">30 分钟</span>
+            </div>
+          </div>
+        </div>
+        <div class="card" style="padding:0;overflow:hidden">
+          <div style="height:104px;overflow:hidden">
+            <img class="demo-img" src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=calm%20asian%20woman%20doing%20seated%20forward%20fold%20stretch%2C%20bedtime%20yoga%2C%20dark%20peaceful%20room%2C%20realistic%20fitness%20photography%2C%20soft%20moody%20lighting&image_size=square" alt="">
+          </div>
+          <div style="padding:12px">
+            <div style="font-size:14px;font-weight:700">睡前拉伸</div>
+            <div class="row" style="gap:6px;margin-top:6px">
+              <span class="pill-tag" style="background:rgba(200,243,29,.14);color:var(--acc);font-size:10px">拉伸</span>
+              <span class="caption" style="font-size:10px;color:var(--txt-3)">10 分钟</span>
+            </div>
+          </div>
+        </div>
+        <div class="card" style="padding:0;overflow:hidden">
+          <div style="height:104px;overflow:hidden">
+            <img class="demo-img" src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=athletic%20asian%20man%20doing%20plank%20core%20exercise%2C%20perfect%20form%2C%20dark%20modern%20gym%2C%20realistic%20fitness%20photography%2C%20dramatic%20rim%20lighting%2C%20muscular%20abs&image_size=square" alt="">
+          </div>
+          <div style="padding:12px">
+            <div style="font-size:14px;font-weight:700">核心激活</div>
+            <div class="row" style="gap:6px;margin-top:6px">
+              <span class="pill-tag" style="background:rgba(255,138,91,.14);color:var(--orange);font-size:10px">全身</span>
+              <span class="caption" style="font-size:10px;color:var(--txt-3)">15 分钟</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="flex:1"></div>
+    <div class="tabbar">
+      <div class="tab">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 12 3l9 6.5V21a1 1 0 0 1-1 1h-5v-7h-6v7H4a1 1 0 0 1-1-1z"/></svg>
+        运动
+      </div>
+      <div class="tab on">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5v11m11-11v11M3 9v6m18-6v6M6.5 12h11"/></svg>
+        跟练
+      </div>
+      <div class="tab">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg>
+        我的
+      </div>
+    </div>
+    <div class="homebar"></div>
+  </div>
+</div>
+</body>
+</html>

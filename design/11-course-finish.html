@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>11 · 课程完成</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="screen">
+  <div class="notch"></div>
+  <div class="scroll">
+    <div class="statusbar"><span>9:41</span>
+      <span style="display:flex;gap:6px;align-items:center">
+        <svg width="17" height="11" viewBox="0 0 17 11" fill="white"><rect x="0" y="7" width="3" height="4" rx="1"/><rect x="4.5" y="5" width="3" height="6" rx="1"/><rect x="9" y="2.5" width="3" height="8.5" rx="1"/><rect x="13.5" y="0" width="3" height="11" rx="1"/></svg>
+        <svg width="25" height="12" viewBox="0 0 25 12"><rect x="0.5" y="0.5" width="20" height="11" rx="3" fill="none" stroke="white" opacity=".4"/><rect x="2" y="2" width="15" height="8" rx="1.5" fill="white"/><path d="M23 4v4a2.2 2.2 0 0 0 0-4z" fill="white" opacity=".4"/></svg>
+      </span>
+    </div>
+
+    <div style="padding:4px 20px 0;overflow:hidden;display:flex;flex-direction:column;align-items:center">
+      <div style="font-size:15px;font-weight:700;color:var(--acc);margin-top:8px">训练完成</div>
+
+      <div style="position:relative;width:200px;height:200px;margin-top:20px">
+        <svg width="200" height="200" viewBox="0 0 200 200">
+          <circle class="ring-track" cx="100" cy="100" r="88" stroke-width="10"/>
+          <circle class="ring-acc" cx="100" cy="100" r="88" stroke-width="10"
+            stroke-dasharray="553" stroke-dashoffset="83" transform="rotate(-90 100 100)"/>
+        </svg>
+        <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center">
+          <div class="num" style="font-size:48px;letter-spacing:-.03em">85<span style="font-size:18px">%</span></div>
+          <div class="caption" style="font-size:12px;color:var(--txt-3);margin-top:2px">完成度</div>
+        </div>
+      </div>
+
+      <div class="page-title" style="font-size:24px;margin-top:18px">燃脂全身 · 20 分钟</div>
+      <div class="caption" style="font-size:13px;margin-top:4px">8 个动作 · 完成 7 个</div>
+
+      <div class="row" style="gap:10px;margin-top:22px;width:100%">
+        <div class="card" style="flex:1;padding:14px;text-align:center">
+          <div class="num" style="font-size:22px">18:42</div>
+          <div class="label" style="margin-top:2px">训练时长</div>
+        </div>
+        <div class="card" style="flex:1;padding:14px;text-align:center">
+          <div class="num" style="font-size:22px">156</div>
+          <div class="label" style="margin-top:2px">消耗千卡</div>
+        </div>
+        <div class="card" style="flex:1;padding:14px;text-align:center">
+          <div class="num" style="font-size:22px">7/8</div>
+          <div class="label" style="margin-top:2px">完成动作</div>
+        </div>
+      </div>
+
+      <div class="section-title" style="margin-top:22px;align-self:flex-start">动作明细</div>
+      <div style="display:flex;flex-direction:column;gap:8px;margin-top:12px;width:100%">
+        <div class="card" style="padding:12px;display:flex;align-items:center;gap:12px">
+          <div style="width:8px;height:8px;border-radius:50%;background:var(--acc)"></div>
+          <div style="flex:1">
+            <div style="font-size:14px;font-weight:700">开合跳</div>
+            <div class="caption" style="font-size:11px">30 秒</div>
+          </div>
+          <span style="font-size:12px;color:var(--acc);font-weight:600">完成</span>
+        </div>
+        <div class="card" style="padding:12px;display:flex;align-items:center;gap:12px">
+          <div style="width:8px;height:8px;border-radius:50%;background:var(--acc)"></div>
+          <div style="flex:1">
+            <div style="font-size:14px;font-weight:700">高抬腿</div>
+            <div class="caption" style="font-size:11px">30 秒</div>
+          </div>
+          <span style="font-size:12px;color:var(--acc);font-weight:600">完成</span>
+        </div>
+        <div class="card" style="padding:12px;display:flex;align-items:center;gap:12px">
+          <div style="width:8px;height:8px;border-radius:50%;background:var(--acc)"></div>
+          <div style="flex:1">
+            <div style="font-size:14px;font-weight:700">徒手深蹲</div>
+            <div class="caption" style="font-size:11px">20 次</div>
+          </div>
+          <span style="font-size:12px;color:var(--acc);font-weight:600">完成</span>
+        </div>
+        <div class="card" style="padding:12px;display:flex;align-items:center;gap:12px;opacity:.7">
+          <div style="width:8px;height:8px;border-radius:50%;background:var(--txt-3)"></div>
+          <div style="flex:1">
+            <div style="font-size:14px;font-weight:700">俯卧撑</div>
+            <div class="caption" style="font-size:11px">15 次</div>
+          </div>
+          <span style="font-size:12px;color:var(--txt-3);font-weight:600">跳过</span>
+        </div>
+      </div>
+
+      <div style="height:120px"></div>
+    </div>
+
+    <div style="position:absolute;left:0;right:0;bottom:0;padding:12px 20px 26px;background:linear-gradient(0deg,var(--bg) 70%,transparent);z-index:30;display:flex;flex-direction:column;gap:10px">
+      <div class="btn-acc" style="height:54px;font-size:16px">返回课程列表</div>
+      <div style="height:48px;border-radius:999px;background:var(--card-2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:600;color:var(--txt)">再练一次</div>
+    </div>
+    <div class="homebar"></div>
+  </div>
+</div>
+</body>
+</html>
