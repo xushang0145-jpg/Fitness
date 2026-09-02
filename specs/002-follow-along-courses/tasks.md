@@ -138,9 +138,10 @@
   - 全部 P1 验收场景（1-1 ~ 1-8）+ 边界情况（切后台暂停、提前结束、计数越界、空态）
   - **Depends on**: 7.1 | **Requirement**: 全部验收场景
 
-- [ ] **7.3** 文档收尾与合并
+- [x] **7.3** 文档收尾与合并
   - 核对 plan 与实现一致（不一致先改 plan），spec Status → Implemented，合并 `002-follow-along-courses` → `main`
   - **Depends on**: 7.2 | **Requirement**: 章程工作流
+  - 已完成（2026-09-02）：代码提交 `7daa87f` 推送至 GitHub main，spec Status → Implemented；真机验证（4.7/7.2）待设备走查
 
 ---
 
