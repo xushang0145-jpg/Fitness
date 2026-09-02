@@ -64,7 +64,7 @@ export default function RootLayout() {
         <Stack.Screen
           name="settings"
           options={{
-            title: '设置',
+            headerShown: false,
             presentation: 'modal',
           }}
         />

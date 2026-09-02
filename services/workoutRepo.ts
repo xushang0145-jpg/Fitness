@@ -135,6 +135,14 @@ export async function getWorkoutList(
   );
 }
 
+/** 导出用：全部已完成记录，按开始时间倒序，无分页上限 */
+export async function listAllDone(): Promise<Workout[]> {
+  const db = await getDatabase();
+  return db.getAllAsync<Workout>(
+    `SELECT * FROM workout WHERE status = 'done' ORDER BY start_time DESC`
+  );
+}
+
 export async function getTrackPoints(workoutId: string): Promise<TrackPoint[]> {
   const db = await getDatabase();
   return db.getAllAsync<TrackPoint>(

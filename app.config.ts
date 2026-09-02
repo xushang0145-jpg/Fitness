@@ -39,6 +39,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   web: {
     favicon: './assets/favicon.png',
   },
+  plugins: ['expo-sharing'],
   extra: {
     amapIosKey: process.env.AMAP_IOS_KEY ?? '',
     amapAndroidKey: process.env.AMAP_ANDROID_KEY ?? '',

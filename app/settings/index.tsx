@@ -8,6 +8,7 @@ import {
   Alert,
   KeyboardAvoidingView,
   Platform,
+  ScrollView,
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import { getSettings, updateWeeklyGoal, updateWeight } from '@/services/settingsRepo';
@@ -55,36 +56,46 @@ export default function SettingsScreen() {
       style={styles.container}
       behavior={Platform.OS === 'ios' ? 'padding' : undefined}
     >
-      <View style={styles.form}>
-        <View style={styles.field}>
-          <Text style={styles.label}>每周目标（公里）</Text>
-          <TextInput
-            style={styles.input}
-            value={weeklyGoalKm}
-            onChangeText={setWeeklyGoalKm}
-            keyboardType="decimal-pad"
-            placeholder="30"
-            placeholderTextColor={colors.txt3}
-          />
-        </View>
-
-        <View style={styles.field}>
-          <Text style={styles.label}>体重（公斤）</Text>
-          <TextInput
-            style={styles.input}
-            value={weightKg}
-            onChangeText={setWeightKg}
-            keyboardType="decimal-pad"
-            placeholder="65"
-            placeholderTextColor={colors.txt3}
-          />
-          <Text style={styles.hint}>用于计算运动消耗的卡路里</Text>
-        </View>
-
-        <TouchableOpacity style={styles.saveButton} onPress={handleSave}>
-          <Text style={styles.saveButtonText}>保存</Text>
+      <ScrollView>
+        <TouchableOpacity
+          style={styles.menuItem}
+          onPress={() => router.push('/settings/export')}
+        >
+          <Text style={styles.menuText}>数据导出</Text>
+          <Text style={styles.menuArrow}>›</Text>
         </TouchableOpacity>
-      </View>
+
+        <View style={styles.form}>
+          <View style={styles.field}>
+            <Text style={styles.label}>每周目标（公里）</Text>
+            <TextInput
+              style={styles.input}
+              value={weeklyGoalKm}
+              onChangeText={setWeeklyGoalKm}
+              keyboardType="decimal-pad"
+              placeholder="30"
+              placeholderTextColor={colors.txt3}
+            />
+          </View>
+
+          <View style={styles.field}>
+            <Text style={styles.label}>体重（公斤）</Text>
+            <TextInput
+              style={styles.input}
+              value={weightKg}
+              onChangeText={setWeightKg}
+              keyboardType="decimal-pad"
+              placeholder="65"
+              placeholderTextColor={colors.txt3}
+            />
+            <Text style={styles.hint}>用于计算运动消耗的卡路里</Text>
+          </View>
+
+          <TouchableOpacity style={styles.saveButton} onPress={handleSave}>
+            <Text style={styles.saveButtonText}>保存</Text>
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
     </KeyboardAvoidingView>
   );
 }
@@ -93,6 +104,24 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.bg,
+  },
+  menuItem: {
+    backgroundColor: colors.card,
+    marginHorizontal: spacing.lg,
+    marginTop: spacing.lg,
+    borderRadius: radius.md,
+    padding: spacing.md,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  menuText: {
+    ...typography.label,
+    color: colors.txt,
+  },
+  menuArrow: {
+    fontSize: 24,
+    color: colors.txt3,
   },
   form: {
     padding: spacing.lg,

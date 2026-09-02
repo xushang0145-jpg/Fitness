@@ -42,3 +42,24 @@ export function wgs84ToGcj02(coord: Coordinate): Coordinate {
     lng: coord.lng + dLng,
   };
 }
+
+/** GCJ-02 → WGS-84 反向转换：以正向偏移迭代回减求精，中国境内 roundtrip 误差 < 1 米 */
+export function gcj02ToWgs84(coord: Coordinate): Coordinate {
+  if (outOfChina(coord.lat, coord.lng)) {
+    return coord;
+  }
+  const gcj = wgs84ToGcj02(coord);
+  let wgs: Coordinate = {
+    lat: coord.lat * 2 - gcj.lat,
+    lng: coord.lng * 2 - gcj.lng,
+  };
+  // 迭代修正残差，两轮即可收敛到毫米级
+  for (let i = 0; i < 2; i++) {
+    const estimate = wgs84ToGcj02(wgs);
+    wgs = {
+      lat: wgs.lat - (estimate.lat - coord.lat),
+      lng: wgs.lng - (estimate.lng - coord.lng),
+    };
+  }
+  return wgs;
+}
